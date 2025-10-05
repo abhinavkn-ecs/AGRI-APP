@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soil Detection • Farmer's App</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<header>
+  <h1>🪴 Soil Detection</h1>
+  <p>Upload or take a photo of your soil</p>
+</header>
+<div class="container">
+  <div class="card">
+    <h2>Analyze Soil</h2>
+    <input id="soilInput" type="file" accept="image/*" capture="environment" />
+    <div style="margin-top:10px">
+      <button id="analyzeBtn">Analyze</button>
+      <a href="index.html" style="margin-left:10px;">⬅ Back</a>
+    </div>
+    <div id="soilResult" style="margin-top:12px;">No image yet</div>
+    <div id="samplePreview" style="margin-top:8px"></div>
+  </div>
+</div>
+<script src="soil.js"></script>
+</body>
+</html>

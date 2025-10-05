@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Assistant • Farmer's App</title>
+<link rel="stylesheet" href="common.css">
+</head>
+<body>
+<header>
+  <h1>🎤 Voice Assistant</h1>
+  <p>Speak in Malayalam and perform actions</p>
+</header>
+<div class="container">
+  <div class="card">
+    <button id="startBtn">Start Listening</button>
+    <button id="stopBtn" disabled>Stop</button>
+    <a href="index.html" style="margin-left:10px;">⬅ Back</a>
+    <div style="margin-top:12px">
+      <div><strong>Recognized text:</strong></div>
+      <pre id="recognized">—</pre>
+    </div>
+    <div style="margin-top:12px">
+      <div><strong>Action log:</strong></div>
+      <pre id="actionLog">No actions yet</pre>
+    </div>
+  </div>
+</div>
+<script src="speech.js"></script>
+</body>
+</html>

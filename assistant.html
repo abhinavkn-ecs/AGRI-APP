@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="assistant.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🤖 Farming Assistant</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+  <header>
+    <h1>🤖 Farming Assistant</h1>
+    <p>Chat about crops, soil, and weather</p>
+  </header>
+
+  <div class="chat-container">
+    <textarea id="input" placeholder="Type your message here..."></textarea><br>
+    <button onclick="send()">Send</button>
+    <div id="output">Response will appear here...</div>
+  </div>
+
+  <footer>© 2025 Farmer's App</footer>
+
+  <script>
+    async function send() {
+      const userText = document.getElementById("input").value;
+      if (!userText) return;
+
+      document.getElementById("output").innerText = "Loading...";
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/generate/", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ text: userText })
+        });
+
+        const data = await response.json();
+        document.getElementById("output").innerText = data.output || "No response";
+      } catch (err) {
+        document.getElementById("output").innerText = "Error: " + err;
+      }
+    }
+  </script>
+</body>
+</html>
